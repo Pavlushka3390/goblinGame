@@ -1,5 +1,3 @@
-// import { getRandomInteger } from './utils';
-
 export default class GoblinGame {
   constructor(gameField) {
     this.gameField = gameField;
@@ -27,8 +25,6 @@ export default class GoblinGame {
     });
   }
 
-
-
   start() {
     this.gameField.render(document.querySelector('.task-field'));
 
@@ -52,7 +48,7 @@ export default class GoblinGame {
       }
 
       this.changeActiveCell(position);
-    }, 2000);
+    }, 1000);
   }
 
   changeActiveCell(newPosition) {
