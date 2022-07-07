@@ -1,39 +1,29 @@
-class GameBoard {
-  constructor(boardSize) {
-    this.boardSize = boardSize ** 2;
-    this.previousIndexCell = 0;
-    this.currentIndexCell = 0;
-  }
+import GoblinCell from './GoblinCell';
+import GoblinGame from './GoblinGame';
+import GoblinGameField from './GoblinGameField';
 
-  drawBoard() {
-    const board = document.getElementById('board');
-    for (let i = 0; i < this.boardSize; i += 1) {
-      const itemBoard = document.createElement('div');
-      itemBoard.className = 'cell';
-      itemBoard.id = `cell${i}`;
-      board.appendChild(itemBoard);
-    }
+function createGoblinControl() {
+  const controls = document.querySelector('.controls');
+  const taskField = document.querySelector('.task-field');
 
-    this.randomImg();
-  }
+  const button = document.createElement('button');
+  button.classList.add('control');
+  button.textContent = 'Goblinslayer';
+  controls.insertAdjacentElement('beforeEnd', button);
 
-  randomImg() {
-    setInterval(() => {
-      do {
-        this.currentIndexCell = Math.floor(Math.random() * this.boardSize);
-      } while (this.currentIndexCell === this.previousIndexCell);
+  button.addEventListener('click', () => {
+    taskField.innerHTML = '';
 
-      if (this.previousIndexCell >= 0) {
-        const previousCell = document.getElementById(`cell${this.previousIndexCell}`);
-        previousCell.innerHTML = '';
-      }
+    const gameField = new GoblinGameField(4, 4, GoblinCell);
 
-      const currentCell = document.getElementById(`cell${this.currentIndexCell}`);
-      currentCell.innerHTML = '<img src = "./img/goblin.png">';
-      this.previousIndexCell = this.currentIndexCell;
-    }, 1000);
-  }
+    const game = new GoblinGame(gameField);
+
+    game.start();
+  });
 }
 
-const newBoard = new GameBoard(4);
-newBoard.drawBoard();
+function main() {
+  createGoblinControl();
+}
+
+main();

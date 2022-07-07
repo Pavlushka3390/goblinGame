@@ -1,27 +1,14 @@
 {
-    "env": {
-      "jest": true,
-      "browser": true,
-      "es6": true
-    },
-    "extends": [
-      "airbnb-base"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 11,
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-restricted-syntax": [
-        "error",
-        "LabeledStatement",
-        "WithStatement"
-      ],
-      "no-console": 0,
-      "no-alert": 0,
-      "no-unused-vars": 0,
-      "import/no-extraneous-dependencies": ["error", {
-        "devDependencies": true
-      }]
-    }
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "no-shadow": "off"
   }
+}
