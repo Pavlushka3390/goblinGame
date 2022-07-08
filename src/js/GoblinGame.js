@@ -48,7 +48,7 @@ export default class GoblinGame {
       }
 
       this.changeActiveCell(position);
-    }, 1000);
+    }, 2000);
   }
 
   changeActiveCell(newPosition) {
