@@ -10,9 +10,9 @@ export default class GameField {
 
   checkFieldBoundary({ column, row }) {
     if (
-      row >= this.field.length,
-      column >= this.field[row].length,
-      column < 0,
+      row >= this.field.length ||
+      column >= this.field[row].length ||
+      column < 0 ||
       row < 0
     ) {
       throw new Error('out of field bound');
