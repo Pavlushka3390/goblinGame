@@ -60,9 +60,6 @@ img {
   justify-content: flex-start;
 }
 
-.cell-target {
-}
-
 .cell-target-defeat {
   background-color: rgb(42, 165, 79);
 }
