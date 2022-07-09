@@ -39,8 +39,8 @@ export default class GoblinGame {
       };
 
       while (
-        this.activeCellPosition 
-        && position.row === this.activeCellPosition.row 
+        this.activeCellPosition
+        && position.row === this.activeCellPosition.row
         && position.column === this.activeCellPosition.column
       ) {
         position.row = getRandom(0, this.gameField.rowCount);

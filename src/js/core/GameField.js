@@ -22,7 +22,6 @@ export default class GameField {
   init() {
     this.field = Array(this.rowCount)
       .fill(0)
-      .map((_, row) => Array(this.columnCount).fill(0).map((_, column) => new this.CellClass({ row, column })),
-      );
+      .map((_, row) => Array(this.columnCount).fill(0).map((_, column) => new this.CellClass({ row, column })));
   }
 }
