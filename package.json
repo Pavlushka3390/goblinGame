@@ -2,7 +2,7 @@
   "name": "goblingame",
   "version": "1.0.0",
   "description": "[![Build status](https://ci.appveyor.com/api/projects/status/ljwuh8i5m50g7puj?svg=true)](https://ci.appveyor.com/project/pavel27499/goblingame)",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
